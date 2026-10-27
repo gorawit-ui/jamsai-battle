@@ -1,0 +1,21 @@
+display_information:
+  name: แจ่มใส Battle
+  description: เว็บกิจกรรมอ่านหนังสือ ปฏิบัติการอ่านสู้ศึก
+  background_color: "#2f9bea"
+oauth_config:
+  redirect_urls:
+    # เปลี่ยนเป็น URL Cloud Run จริง (เพิ่มได้หลาย URL เช่น dev + prod)
+    - https://YOUR-CLOUD-RUN-URL/api/auth/callback/slack
+  scopes:
+    user:
+      - openid
+      - profile
+      - email
+    bot:
+      - channels:read
+      - users:read
+      - users:read.email
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
