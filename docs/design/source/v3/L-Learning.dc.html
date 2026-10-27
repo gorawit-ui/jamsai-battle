@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>แจ่มใส Battle — Learning</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&amp;family=Anuphan:wght@400;500;600&amp;family=Mali:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#17181C}a:hover{color:#1C6FC2}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1420px; box-sizing: border-box; background: #2F9BEA; font-family: 'Anuphan', sans-serif; color: #17181C; overflow: hidden;">
+
+  <header style="position: relative; padding: 48px 16px 12px; display: flex; flex-direction: column; gap: 10px;">
+    <h1 style="margin: 0; font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 32px; color: #FFDD3C; -webkit-text-stroke: 2px #17181C; paint-order: stroke fill; text-shadow: 3px 3px 0 #17181C;">Learning</h1>
+    <div style="background: #FFFDF5; border: 3px solid #17181C; border-radius: 18px; box-shadow: 4px 4px 0 #17181C; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;"><b style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 16px;">อ่านแล้ว 4 จาก 10 บท</b><span style="font-size: 12.5px; color: #4A4F57;">เล่ม 1 · 4/5</span></div>
+      <div style="height: 14px; border: 2.5px solid #17181C; border-radius: 999px; background: #FFFDF5; overflow: hidden;"><div style="width: 40%; height: 100%; background: #42A161;"></div></div>
+    </div>
+  </header>
+
+  <main style="position: relative; padding: 4px 16px 120px; display: flex; flex-direction: column; gap: 12px;">
+    <sc-for list="{{ weeks }}" as="wk" hint-placeholder-count="7">
+      <section style="{{ wk.cardStyle }}">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+          <span style="display: flex; flex-direction: column;">
+            <b style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 16px;">{{ wk.title }}</b>
+            <span style="font-size: 12.5px; color: #4A4F57;">{{ wk.dates }}</span>
+          </span>
+          <span style="{{ wk.tagStyle }}">{{ wk.tag }}</span>
+        </div>
+        <sc-for list="{{ wk.chapters }}" as="ch" hint-placeholder-count="2">
+          <div style="display: flex; align-items: center; gap: 10px; padding-top: 8px; border-top: 2px dashed #CFD3D8;">
+            <span style="{{ ch.spineStyle }}"></span>
+            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14px;">{{ ch.name }}</b><span style="font-size: 12px; color: #4A4F57;">{{ ch.sub }}</span></span>
+            <sc-if value="{{ ch.open }}" hint-placeholder-val="{{ true }}">
+              <span style="display: flex; gap: 6px;">
+                <button style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 13px; min-height: 36px; padding: 0 12px; background: #FFDD3C; color: #17181C; border: 2.5px solid #17181C; border-radius: 10px; cursor: pointer;">อ่าน</button>
+                <button style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 13px; min-height: 36px; padding: 0 12px; background: #FFFDF5; color: #17181C; border: 2.5px solid #17181C; border-radius: 10px; cursor: pointer;">คลิป</button>
+              </span>
+            </sc-if>
+            <sc-if value="{{ ch.locked }}" hint-placeholder-val="{{ false }}">
+              <svg aria-label="ล็อกอยู่" role="img" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A4F57" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            </sc-if>
+          </div>
+        </sc-for>
+      </section>
+    </sc-for>
+    <p style="margin: 0; text-align: center; font-family: 'Mali', cursive; font-weight: 600; font-size: 14px;">เนื้อหาและคลิปทยอยเปิดตามสัปดาห์</p>
+  </main>
+
+  <nav aria-label="เมนูหลัก" style="position: absolute; left: 12px; right: 12px; bottom: 16px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 8px; background: #FFFDF5; border: 3px solid #17181C; border-radius: 22px; box-shadow: 4px 4px 0 #17181C;">
+    <a href="H1-Home.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a href="D-Dashboard.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 21h8M10 17h4"/></svg>Dashboard</a>
+    <a href="L-Learning.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; background: #FFDD3C; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg>Learning</a>
+    <a href="P-Profile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Profile</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const card = (state) => {
+      const base = 'border: 3px solid #17181C; border-radius: 20px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;';
+      if (state === 'now') return base + ' background: #FFFDF5; box-shadow: 5px 5px 0 #FFDD3C, 5px 5px 0 3px #17181C;';
+      if (state === 'done') return base + ' background: #FFFDF5; box-shadow: 4px 4px 0 #17181C;';
+      return base + ' background: #E6EEF7; border-style: dashed;';
+    };
+    const tag = (state) => {
+      const base = 'font-size: 12px; font-weight: 700; padding: 3px 10px; border: 2px solid #17181C; border-radius: 999px; white-space: nowrap;';
+      if (state === 'now') return base + ' background: #FFDD3C;';
+      if (state === 'done') return base + ' background: #DDF2E2;';
+      return base + ' background: #FFFDF5;';
+    };
+    const spine = (book, locked) => 'flex: 0 0 14px; height: 34px; border-radius: 3px; border: 2.5px solid ' + (locked ? '#A9AFB7' : '#17181C') + '; background: ' + (locked ? 'transparent' : (book === 1 ? '#42A161' : '#FFDD3C')) + ';';
+    const ch = (name, sub, book, state) => ({ name, sub, open: state !== 'lock', locked: state === 'lock', spineStyle: spine(book, state === 'lock') });
+    const wk = (title, dates, state, tagText, chapters) => ({ title, dates, cardStyle: card(state), tagStyle: tag(state), tag: tagText, chapters });
+    return {
+      weeks: [
+        wk('สัปดาห์ 3 · เล่ม 1', '23–27 พ.ย.', 'now', 'เปิดอยู่', [ch('บทที่ 5 · Curious', 'เอ๊ะ ทำไมต้องอุณหภูมิห้อง', 1, 'open'), ch('รวมเล่ม 1', 'ทบทวนบท 1–5', 1, 'open')]),
+        wk('สัปดาห์ 1 · เล่ม 1', '9–13 พ.ย.', 'done', 'ผ่านแล้ว', [ch('บทที่ 1 · Caring', 'กล่องที่ไม่ถึงมือ', 1, 'open'), ch('บทที่ 2 · Trusted', 'คำที่พูดไว้กับพี่สมาน', 1, 'open')]),
+        wk('สัปดาห์ 2 · เล่ม 1', '16–20 พ.ย.', 'done', 'ผ่านแล้ว', [ch('บทที่ 3 · Humble', 'I may be wrong', 1, 'open'), ch('บทที่ 4 · Team', 'คนส่งบอล', 1, 'open')]),
+        wk('สัปดาห์ 4 · เล่ม 2', '30 พ.ย.–4 ธ.ค.', 'lock', 'เปิด 30 พ.ย.', [ch('บทที่ 1 · Servant Leadership', 'เก้าอี้ที่แม็กซ์เลือกนั่ง', 2, 'lock')]),
+        wk('สัปดาห์ 5 · เล่ม 2', '7–11 ธ.ค.', 'lock', 'เปิด 7 ธ.ค.', [ch('บทที่ 2 · Courage', 'คำว่า "ไม่" ที่พูดยากที่สุด', 2, 'lock'), ch('บทที่ 3 · Think like an Owner', 'ของที่ยังอยู่บนชั้น', 2, 'lock')]),
+        wk('สัปดาห์ 6 · เล่ม 2', '14–18 ธ.ค.', 'lock', 'เปิด 14 ธ.ค.', [ch('บทที่ 4 · Good Judgment', 'สามรสที่อยากเพิ่ม', 2, 'lock'), ch('บทที่ 5 · Accountability', 'ความรับผิดชอบของผม', 2, 'lock')]),
+        wk('สัปดาห์ 7 · โค้งสุดท้าย', '21–25 ธ.ค. · Double Point', 'lock', 'เปิด 21 ธ.ค.', [ch('รวมเล่ม 1–2', 'ทบทวนทั้ง 10 บท', 2, 'lock')])
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

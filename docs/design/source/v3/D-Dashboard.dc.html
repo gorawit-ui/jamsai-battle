@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>แจ่มใส Battle — Dashboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&amp;family=Anuphan:wght@400;500;600&amp;family=Mali:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#17181C}a:hover{color:#1C6FC2}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 1420px; box-sizing: border-box; background: #2F9BEA; font-family: 'Anuphan', sans-serif; color: #17181C; overflow: hidden;">
+
+  <header style="position: relative; padding: 48px 16px 12px; display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h1 style="margin: 0; font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 32px; color: #FFDD3C; -webkit-text-stroke: 2px #17181C; paint-order: stroke fill; text-shadow: 3px 3px 0 #17181C;">Dashboard</h1>
+      <span style="font-size: 12.5px; font-weight: 600; padding: 4px 12px; background: #FFFDF5; border: 2.5px solid #17181C; border-radius: 999px;">สัปดาห์ 3 จาก 7</span>
+    </div>
+    <div role="tablist" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 4px; background: #FFFDF5; border: 3px solid #17181C; border-radius: 16px;">
+      <button role="tab" aria-selected="true" style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 15px; padding: 9px; background: #17181C; color: #FFDD3C; border: none; border-radius: 11px; cursor: pointer;">อันดับทีม</button>
+      <button role="tab" aria-selected="false" style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 15px; padding: 9px; background: transparent; color: #17181C; border: none; border-radius: 11px; cursor: pointer;">รายคน</button>
+    </div>
+  </header>
+
+  <main style="position: relative; padding: 4px 16px 120px; display: flex; flex-direction: column; gap: 16px;">
+
+    <section style="background: #FFFDF5; border: 3px solid #17181C; border-radius: 22px; box-shadow: 5px 5px 0 #17181C; padding: 16px 12px 0; display: flex; flex-direction: column; gap: 6px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-items: end;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+          <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24"><path d="M5 22V3" stroke="#17181C" stroke-width="2.4" stroke-linecap="round"/><path d="M6 4h12l-3 4 3 4H6z" fill="#F0552B" stroke="#17181C" stroke-width="2" stroke-linejoin="round"/></svg>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 14px;">SAMYAN</b>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 22px;">91.2</b>
+          <div style="width: 100%; height: 84px; background: #FFE2D6; border: 3px solid #17181C; border-bottom: none; border-radius: 12px 12px 0 0; display: grid; place-items: center; font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 32px;">2</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+          <svg aria-hidden="true" width="40" height="28" viewBox="0 0 44 30"><path d="M4 26 L2 8 L13 16 L22 3 L31 16 L42 8 L40 26 Z" fill="#FFDD3C" stroke="#17181C" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          <svg aria-hidden="true" width="52" height="52" viewBox="0 0 24 24"><path d="M5 22V3" stroke="#17181C" stroke-width="2.4" stroke-linecap="round"/><path d="M6 4h12l-3 4 3 4H6z" fill="#2E9B4F" stroke="#17181C" stroke-width="2" stroke-linejoin="round"/></svg>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 14px;">FAC</b>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 26px;">96.4</b>
+          <div style="width: 100%; height: 118px; background: #FFDD3C; border: 3px solid #17181C; border-bottom: none; border-radius: 12px 12px 0 0; display: grid; place-items: center; font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 40px;">1</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+          <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24"><path d="M5 22V3" stroke="#17181C" stroke-width="2.4" stroke-linecap="round"/><path d="M6 4h12l-3 4 3 4H6z" fill="#2F6FD6" stroke="#17181C" stroke-width="2" stroke-linejoin="round"/></svg>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 14px;">WH</b>
+          <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 22px;">84.7</b>
+          <div style="width: 100%; height: 60px; background: #DCE8FB; border: 3px solid #17181C; border-bottom: none; border-radius: 12px 12px 0 0; display: grid; place-items: center; font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 28px;">3</div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #FFFDF5; border: 3px solid #17181C; border-radius: 22px; box-shadow: 5px 5px 0 #17181C; padding: 14px 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="margin: 0; font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 17px;">คนเล่นสัปดาห์นี้</h2>
+        <span style="font-size: 12px; font-weight: 600;">ถึง 80% = All-In Bonus</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="display: flex; justify-content: space-between; font-size: 14px;"><b>FAC · 12 คน</b><span style="font-weight: 600; color: #1F6B36;">83% · ได้โบนัสแล้ว</span></div>
+        <div style="position: relative; height: 16px; border: 2.5px solid #17181C; border-radius: 999px; background: #FFFDF5; overflow: hidden;"><div style="width: 83%; height: 100%; background: #2E9B4F;"></div><div style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2.5px; background: #17181C;"></div></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="display: flex; justify-content: space-between; font-size: 14px;"><b>SAMYAN · 30 คน</b><span style="font-weight: 600;">72% · อีก 3 คน</span></div>
+        <div style="position: relative; height: 16px; border: 2.5px solid #17181C; border-radius: 999px; background: #FFFDF5; overflow: hidden;"><div style="width: 72%; height: 100%; background: #F0552B;"></div><div style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2.5px; background: #17181C;"></div></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 5px;">
+        <div style="display: flex; justify-content: space-between; font-size: 14px;"><b>WH · 18 คน</b><span style="font-weight: 600;">56%</span></div>
+        <div style="position: relative; height: 16px; border: 2.5px solid #17181C; border-radius: 999px; background: #FFFDF5; overflow: hidden;"><div style="width: 56%; height: 100%; background: #2F6FD6;"></div><div style="position: absolute; left: 80%; top: 0; bottom: 0; width: 2.5px; background: #17181C;"></div></div>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center; background: #DCE8FB; border: 2.5px dashed #17181C; border-radius: 14px; padding: 10px 12px;">
+        <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        <span style="flex: 1; font-size: 13.5px; line-height: 1.45;"><b>Comeback Challenge · WH</b><br>เพิ่มคนเล่นอีก 15% จากสัปดาห์ก่อน รับโบนัสทีม</span>
+      </div>
+    </section>
+
+    <section style="background: #FFFDF5; border: 3px solid #17181C; border-radius: 22px; box-shadow: 5px 5px 0 #17181C; padding: 14px 14px 8px; display: flex; flex-direction: column; gap: 2px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-family: 'Mitr', sans-serif; font-weight: 600; font-size: 17px;">Top 5 รายคน</h2>
+        <span style="font-size: 12px; color: #4A4F57;">เท่ากัน ใครทำก่อนอยู่บน</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px; background: #FFDD3C; border: 2.5px solid #17181C; border-radius: 14px;">
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 18px; width: 18px; text-align: center;">1</b>
+        <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; padding: 4px; background: conic-gradient(#7C4DFF, #C4B0FF, #7C4DFF); box-shadow: 0 0 0 2px #17181C;"><span style="display: block; width: 100%; height: 100%; border-radius: 6px; background: #BFE3FF;"></span></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">ณัฐวุฒิ ป.</b><span style="font-size: 12px; font-weight: 600;">B · SAMYAN</span></span>
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 19px;">132</b>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px;">
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 17px; width: 18px; text-align: center;">2</b>
+        <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; padding: 4px; background: conic-gradient(#7C4DFF, #C4B0FF, #7C4DFF); box-shadow: 0 0 0 2px #17181C;"><span style="display: block; width: 100%; height: 100%; border-radius: 6px; background: #BFE3FF;"></span></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">พิมพ์ชนก ส.</b><span style="font-size: 12px; font-weight: 600;">B · FAC</span></span>
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 18px;">128</b>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px; border-top: 2px dashed #CFD3D8;">
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 17px; width: 18px; text-align: center;">3</b>
+        <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; padding: 4px; background: conic-gradient(#7C4DFF, #C4B0FF, #7C4DFF); box-shadow: 0 0 0 2px #17181C;"><span style="display: block; width: 100%; height: 100%; border-radius: 6px; background: #BFE3FF;"></span></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">ธีรภัทร ม.</b><span style="font-size: 12px; font-weight: 600;">B · SAMYAN</span></span>
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 18px;">121</b>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px; border-top: 2px dashed #CFD3D8;">
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 17px; width: 18px; text-align: center;">4</b>
+        <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; background: #BFE3FF; border: 4px double #2F6FD6; box-shadow: 0 0 0 2px #17181C;"></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">กัญญาณัฐ ว.</b><span style="font-size: 12px; font-weight: 600;">C · WH</span></span>
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 18px;">86</b>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 8px; border-top: 2px dashed #CFD3D8;">
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 17px; width: 18px; text-align: center;">5</b>
+        <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; background: #BFE3FF; border: 4px double #2F6FD6; box-shadow: 0 0 0 2px #17181C;"></span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">อนุชา ท.</b><span style="font-size: 12px; font-weight: 600;">C · FAC</span></span>
+        <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 18px;">84</b>
+      </div>
+    </section>
+
+    <section style="background: #17181C; color: #FFFDF5; border-radius: 22px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+      <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 17px; color: #FFDD3C;">34</b>
+      <span style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 10px; background: #BFE3FF; border: 4px double #58B0EE; box-shadow: 0 0 0 2px #FFFDF5;"></span>
+      <span style="flex: 1; display: flex; flex-direction: column;"><b style="font-size: 14.5px;">คุณ · C · SAMYAN</b><span style="font-size: 12.5px; color: #E6E8EB;">อีก 3 คะแนนแซงอันดับ 33</span></span>
+      <b style="font-family: 'Mitr', sans-serif; font-weight: 700; font-size: 19px; color: #FFDD3C;">75</b>
+    </section>
+  </main>
+
+  <nav aria-label="เมนูหลัก" style="position: absolute; left: 12px; right: 12px; bottom: 16px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 8px; background: #FFFDF5; border: 3px solid #17181C; border-radius: 22px; box-shadow: 4px 4px 0 #17181C;">
+    <a href="H1-Home.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home</a>
+    <a href="D-Dashboard.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; background: #FFDD3C; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 13v4M8 21h8M10 17h4"/></svg>Dashboard</a>
+    <a href="L-Learning.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg>Learning</a>
+    <a href="P-Profile.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 14px; text-decoration: none; color: #17181C; font-size: 12px; font-weight: 600;"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#17181C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Profile</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
