@@ -1,0 +1,104 @@
+/* ดัดแปลงจาก docs/rank-frames/rank-avatar.css — รูปอยู่หลัง กรอบ PNG อยู่หน้า */
+.root {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+
+.photo {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.photo img,
+.fallback {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mitr), sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.spark {
+  position: absolute;
+  display: block;
+  width: var(--star-size, 5%);
+  height: var(--star-size, 5%);
+  background: #fff9d6;
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+  animation: twinkle 4.8s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* แสงกรอบขึ้นลงเฉพาะ S / SSS / Legendary · ไม่หมุนหรือขยายกรอบ */
+.shine .frame {
+  animation: shine 5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  55%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+  }
+  68% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.1) rotate(25deg);
+  }
+  82% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6) rotate(45deg);
+  }
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 1px var(--accent));
+  }
+  50% {
+    filter: brightness(1.07) drop-shadow(0 0 5px var(--accent));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark {
+    display: none;
+  }
+  .shine .frame {
+    animation: none;
+  }
+}
