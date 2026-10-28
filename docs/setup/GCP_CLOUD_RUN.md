@@ -91,8 +91,8 @@ done
 
 ## 7. เชื่อม GitHub → Cloud Build (deploy อัตโนมัติ)
 
-1. Console → **Cloud Build → Repositories** → Region `asia-southeast1` → **Create host connection** → GitHub → อนุญาตแอป Google Cloud Build บน GitHub ให้เห็น repo `gorawit-ui/jamsai-battle`
-2. **Link repository** → เลือก `jamsai-battle`
+1. Console → **Cloud Build → Repositories** → Region `asia-southeast1` → **Create host connection** → GitHub → อนุญาตแอป Google Cloud Build บน GitHub org **TDFB-TH** ให้เห็น repo `TDFB-TH/GM-Q4-Battle` (ต้องเป็น owner ของ org หรือให้ owner กดอนุมัติ)
+2. **Link repository** → เลือก `GM-Q4-Battle`
 3. **Triggers → Create trigger**
    - Region `asia-southeast1` · Event: Push to a branch · Branch `^main$`
    - Configuration: Cloud Build configuration file · `cloudbuild.yaml` (ผมจะเพิ่มไฟล์นี้ใน repo ตอนโมดูล 9)
